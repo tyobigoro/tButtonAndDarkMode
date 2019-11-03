@@ -18,3 +18,7 @@ class ViewController: UIViewController {
 
 }
 
+@IBDesignable class SampltBtn: UIButton {
+    
+}
+
