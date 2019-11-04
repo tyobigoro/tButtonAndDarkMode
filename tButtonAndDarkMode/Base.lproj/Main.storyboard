@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjz-a0-loT" customClass="SampltBtn" customModule="tButtonAndDarkMode" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjz-a0-loT" customClass="ButtonWithDotmark" customModule="tButtonAndDarkMode" customModuleProvider="target">
                                 <rect key="frame" x="117" y="423" width="180" height="50"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -24,7 +24,10 @@
                                     <constraint firstAttribute="height" constant="50" id="xgB-Jw-pTu"/>
                                 </constraints>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" name="btnTextColor"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -45,13 +48,14 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOW-Oz-2Bx">
-                                <rect key="frame" x="157" y="483" width="100" height="25"/>
+                                <rect key="frame" x="157" y="498" width="100" height="25"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="I2A-Oj-aeL"/>
                                     <constraint firstAttribute="height" constant="25" id="y5h-76-e1v"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="isEnabled">
                                     <color key="titleColor" name="btnTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -69,20 +73,122 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3g1-Cn-nTa"/>
+                                    <action selector="isEnabledBtnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3g1-Cn-nTa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uog-SW-ss8">
+                                <rect key="frame" x="157" y="533" width="100" height="25"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="BO6-hW-Nwz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="LF9-cp-2fP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="isLPEnabled">
+                                    <color key="titleColor" name="btnTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="isLPEnabledBtnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TnV-0G-3Fm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0D-Tk-hh7">
+                                <rect key="frame" x="117" y="74" width="180" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="PFv-In-K9L"/>
+                                    <constraint firstAttribute="height" constant="50" id="qoM-2A-9UR"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojE-uR-P8r">
+                                <rect key="frame" x="157" y="149" width="100" height="25"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="DjS-Ff-tof"/>
+                                    <constraint firstAttribute="height" constant="25" id="seE-sd-XtA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="isEnabled">
+                                    <color key="titleColor" name="btnTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="isEnabledBtn_sample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMT-Sw-3Lq"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" name="mainBGColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uog-SW-ss8" firstAttribute="height" secondItem="YOW-Oz-2Bx" secondAttribute="height" id="2ay-YN-pjn"/>
+                            <constraint firstItem="uog-SW-ss8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4WA-eS-sly"/>
+                            <constraint firstItem="ojE-uR-P8r" firstAttribute="width" secondItem="YOW-Oz-2Bx" secondAttribute="width" id="Akq-C4-oJY"/>
+                            <constraint firstItem="C0D-Tk-hh7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cob-Wt-2Rz"/>
+                            <constraint firstItem="uog-SW-ss8" firstAttribute="top" secondItem="YOW-Oz-2Bx" secondAttribute="bottom" constant="10" id="FpG-rC-9kX"/>
+                            <constraint firstItem="C0D-Tk-hh7" firstAttribute="width" secondItem="Gjz-a0-loT" secondAttribute="width" id="Ino-O1-Ryk"/>
                             <constraint firstItem="Gjz-a0-loT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JF2-Zn-DBE"/>
+                            <constraint firstItem="ojE-uR-P8r" firstAttribute="height" secondItem="YOW-Oz-2Bx" secondAttribute="height" id="Lac-2M-UU6"/>
+                            <constraint firstItem="ojE-uR-P8r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OOu-OA-gnk"/>
                             <constraint firstItem="Gjz-a0-loT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UI0-7z-Hmp"/>
-                            <constraint firstItem="YOW-Oz-2Bx" firstAttribute="top" secondItem="Gjz-a0-loT" secondAttribute="bottom" constant="10" id="bbG-iV-c40"/>
+                            <constraint firstItem="C0D-Tk-hh7" firstAttribute="height" secondItem="Gjz-a0-loT" secondAttribute="height" id="YaM-fJ-Yan"/>
+                            <constraint firstItem="YOW-Oz-2Bx" firstAttribute="top" secondItem="Gjz-a0-loT" secondAttribute="bottom" constant="25" id="bbG-iV-c40"/>
+                            <constraint firstItem="uog-SW-ss8" firstAttribute="width" secondItem="YOW-Oz-2Bx" secondAttribute="width" id="oXz-aZ-lti"/>
                             <constraint firstItem="YOW-Oz-2Bx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q2w-2P-4z9"/>
+                            <constraint firstItem="ojE-uR-P8r" firstAttribute="top" secondItem="C0D-Tk-hh7" secondAttribute="bottom" constant="25" id="s1x-x7-hbA"/>
+                            <constraint firstItem="C0D-Tk-hh7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="uAx-Zo-5sa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="basicBtn" destination="C0D-Tk-hh7" id="Knz-Ad-uwu"/>
                         <outlet property="tBtn" destination="Gjz-a0-loT" id="ExF-l9-weh"/>
                     </connections>
                 </viewController>
@@ -94,9 +200,6 @@
     <resources>
         <namedColor name="btnTextColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </namedColor>
-        <namedColor name="mainBGColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
