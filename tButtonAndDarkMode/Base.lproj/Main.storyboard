@@ -16,18 +16,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjz-a0-loT" customClass="ButtonWithDotmark" customModule="tButtonAndDarkMode" customModuleProvider="target">
-                                <rect key="frame" x="117" y="423" width="180" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjz-a0-loT" customClass="ButtonWithDotmark" customModule="tButtonAndDarkMode" customModuleProvider="target">
+                                <rect key="frame" x="117" y="199" width="180" height="50"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="tcM-IN-Gag"/>
                                     <constraint firstAttribute="height" constant="50" id="xgB-Jw-pTu"/>
                                 </constraints>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button" image="preLapImage">
+                                    <color key="titleColor" name="btnTextColor"/>
                                 </state>
-                                <state key="disabled">
+                                <state key="disabled" image="preLap lightGray">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="highlighted" image="preLap lightGray">
+                                    <color key="titleColor" name="btnTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -37,18 +43,18 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="1" height="1"/>
+                                        <size key="value" width="0.0" height="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.5"/>
+                                        <real key="value" value="0.20000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOW-Oz-2Bx">
-                                <rect key="frame" x="157" y="498" width="100" height="25"/>
+                                <rect key="frame" x="157" y="274" width="100" height="25"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="I2A-Oj-aeL"/>
@@ -77,7 +83,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uog-SW-ss8">
-                                <rect key="frame" x="157" y="533" width="100" height="25"/>
+                                <rect key="frame" x="157" y="309" width="100" height="25"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="BO6-hW-Nwz"/>
@@ -165,8 +171,82 @@
                                     <action selector="isEnabledBtn_sample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMT-Sw-3Lq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6A-es-vDN" customClass="ButtonWithDotmark_R" customModule="tButtonAndDarkMode" customModuleProvider="target">
+                                <rect key="frame" x="117" y="394" width="180" height="50"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="dow-ta-ca5"/>
+                                    <constraint firstAttribute="height" constant="50" id="mfm-ki-SIo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button" image="preLapImage">
+                                    <color key="titleColor" name="btnTextColor"/>
+                                </state>
+                                <state key="disabled" image="preLap lightGray">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jj-ih-zyn" customClass="ButtonWithDotmark" customModule="tButtonAndDarkMode" customModuleProvider="target">
+                                <rect key="frame" x="117" y="512.5" width="180" height="50"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dZz-qk-Hqh"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="vNC-xc-ox2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button" image="preLapImage">
+                                    <color key="titleColor" name="btnTextColor"/>
+                                </state>
+                                <state key="disabled" image="preLap lightGray">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="highlighted" image="preLap lightGray">
+                                    <color key="titleColor" name="btnTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="uog-SW-ss8" firstAttribute="height" secondItem="YOW-Oz-2Bx" secondAttribute="height" id="2ay-YN-pjn"/>
                             <constraint firstItem="uog-SW-ss8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4WA-eS-sly"/>
@@ -174,16 +254,20 @@
                             <constraint firstItem="C0D-Tk-hh7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cob-Wt-2Rz"/>
                             <constraint firstItem="uog-SW-ss8" firstAttribute="top" secondItem="YOW-Oz-2Bx" secondAttribute="bottom" constant="10" id="FpG-rC-9kX"/>
                             <constraint firstItem="C0D-Tk-hh7" firstAttribute="width" secondItem="Gjz-a0-loT" secondAttribute="width" id="Ino-O1-Ryk"/>
-                            <constraint firstItem="Gjz-a0-loT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JF2-Zn-DBE"/>
+                            <constraint firstItem="Gjz-a0-loT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" id="JF2-Zn-DBE"/>
+                            <constraint firstItem="4Jj-ih-zyn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ks3-6d-Mfh"/>
                             <constraint firstItem="ojE-uR-P8r" firstAttribute="height" secondItem="YOW-Oz-2Bx" secondAttribute="height" id="Lac-2M-UU6"/>
                             <constraint firstItem="ojE-uR-P8r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OOu-OA-gnk"/>
                             <constraint firstItem="Gjz-a0-loT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UI0-7z-Hmp"/>
                             <constraint firstItem="C0D-Tk-hh7" firstAttribute="height" secondItem="Gjz-a0-loT" secondAttribute="height" id="YaM-fJ-Yan"/>
+                            <constraint firstItem="4Jj-ih-zyn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.2" id="bSC-xE-c6K"/>
                             <constraint firstItem="YOW-Oz-2Bx" firstAttribute="top" secondItem="Gjz-a0-loT" secondAttribute="bottom" constant="25" id="bbG-iV-c40"/>
+                            <constraint firstItem="Z6A-es-vDN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fNb-IP-chm"/>
                             <constraint firstItem="uog-SW-ss8" firstAttribute="width" secondItem="YOW-Oz-2Bx" secondAttribute="width" id="oXz-aZ-lti"/>
                             <constraint firstItem="YOW-Oz-2Bx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q2w-2P-4z9"/>
                             <constraint firstItem="ojE-uR-P8r" firstAttribute="top" secondItem="C0D-Tk-hh7" secondAttribute="bottom" constant="25" id="s1x-x7-hbA"/>
                             <constraint firstItem="C0D-Tk-hh7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="uAx-Zo-5sa"/>
+                            <constraint firstItem="Z6A-es-vDN" firstAttribute="top" secondItem="uog-SW-ss8" secondAttribute="bottom" constant="60" id="zl8-bQ-Gip"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -198,6 +282,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="preLap lightGray" width="20" height="20"/>
+        <image name="preLapImage" width="20" height="20"/>
         <namedColor name="btnTextColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>

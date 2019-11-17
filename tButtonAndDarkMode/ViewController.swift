@@ -37,56 +37,7 @@ class ViewController: UIViewController {
     
 }
 
-@IBDesignable class SampltBtn: UIButton {
-    
-    var isLongPressEnabled: Bool = false {
-        didSet {
-            if oldValue != isLongPressEnabled {
-                setColorOfMark()
-    }}}
-    
-    var size: CGFloat = 6
-    
-    var color: CGColor = UIColor.lightGray.cgColor
-    
-    
-    //override func draw(_ rect: CGRect) {
-        //super.draw(rect)
-        //drawDotMark()
-    //}
-    
-    func drawDotMark() {
-        
-        let w: CGFloat = size
-        let h: CGFloat = size
-        
-        let x: CGFloat = self.frame.width - w * 2.5
-        let y: CGFloat = self.frame.height - h * 2.5
-        
-        let markLayer = CAShapeLayer.init()
-        let markFrame = CGRect(x: x, y: y, width: w, height: h)
-        markLayer.frame = markFrame
-        
-        markLayer.strokeColor = color
-        markLayer.fillColor = color
-        markLayer.lineWidth = 0.5
-        
-        markLayer.path = UIBezierPath.init(ovalIn: CGRect.init(x: 0,
-                                                               y: 0,
-                                                               width: markFrame.size.width,
-                                                               height: markFrame.size.height)).cgPath
-        
-        self.layer.addSublayer(markLayer)
-        
-    }
-    
-    func setColorOfMark() {
-        color = isLongPressEnabled ? UIColor.darkGray.cgColor : UIColor.lightGray.cgColor
-        self.setNeedsDisplay()
-    }
-    
-    
-}
+
 
 @IBDesignable
 class ButtonWithDotmark: UIButton {
@@ -96,10 +47,14 @@ class ButtonWithDotmark: UIButton {
             super.isEnabled = isEnabled
             if oldValue != isEnabled {
                 setColorOfMark()
-            }
+    }}}
+    
+    override var isHighlighted: Bool {
+        didSet {
+            super.isHighlighted = isHighlighted
+            setColorOfMark()
         }
     }
-    
     
     var isLongPressEnabled: Bool = false {
         didSet {
@@ -120,27 +75,19 @@ class ButtonWithDotmark: UIButton {
     
     var color: CGColor = UIColor.lightGray.cgColor
     
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        //self.setup()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.setup()
+    override func layoutSubviews() {
+        UIView.performWithoutAnimation {
+            super.layoutSubviews()
+        }
     }
     
     
     
-    func setup() {
-        layer.shadowColor = self.layer.shadowColor
-        layer.shadowOffset.width = self.layer.shadowOffset.width
-        layer.shadowOffset.height = self.layer.shadowOffset.height
-        layer.shadowRadius = self.layer.shadowRadius
-        layer.shadowOpacity = self.layer.shadowOpacity
-        super.backgroundColor = UIColor.clear
-    }
     
     override func draw(_ rect: CGRect) {
         customBackgroundColor.setFill()
@@ -153,6 +100,7 @@ class ButtonWithDotmark: UIButton {
         borderPath.lineWidth = borderWidth
         borderPath.stroke()
         
+        setColorOfMark()
         drawDotMark()
     }
     
@@ -183,7 +131,15 @@ class ButtonWithDotmark: UIButton {
     
     func setColorOfMark() {
         if isEnabled {
-            color = isLongPressEnabled ? UIColor.darkGray.cgColor : UIColor.lightGray.cgColor
+            if isHighlighted {
+                color = UIColor.lightGray.cgColor
+            } else {
+                color
+                    = isLongPressEnabled
+                        ? UIColor(named: "btnTextColor")!.cgColor : UIColor.lightGray.cgColor
+                
+                print("### color:", color)
+            }
         } else {
             color = UIColor.lightGray.cgColor
         }
@@ -193,3 +149,94 @@ class ButtonWithDotmark: UIButton {
  
     
 }
+
+
+@IBDesignable class ButtonWithDotmark_R: ButtonWithDotmark {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        reverse()
+    }
+    
+    private func reverse() {
+        transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+    }
+    
+    override func drawDotMark() {
+        
+        let w: CGFloat = size
+        let h: CGFloat = size
+        
+        let x: CGFloat = w * 1.5
+        let y: CGFloat = self.frame.height - h * 2.5
+        
+        let markLayer = CAShapeLayer.init()
+        let markFrame = CGRect(x: x, y: y, width: w, height: h)
+        markLayer.frame = markFrame
+        
+        markLayer.strokeColor = color
+        markLayer.fillColor = color
+        markLayer.lineWidth = 0.5
+        
+        markLayer.path = UIBezierPath.init(ovalIn: CGRect.init(x: 0,
+                                                               y: 0,
+                                                               width: markFrame.size.width,
+                                                               height: markFrame.size.height)).cgPath
+        
+        self.layer.addSublayer(markLayer)
+    }
+    
+}
+
+/*
+
+@IBDesignable class SampltBtn: UIButton {
+    
+    var isLongPressEnabled: Bool = false {
+        didSet {
+            if oldValue != isLongPressEnabled {
+                setColorOfMark()
+    }}}
+    
+    var size: CGFloat = 6
+    
+    var color: CGColor = UIColor.lightGray.cgColor
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        drawDotMark()
+    }
+    
+    func drawDotMark() {
+        
+        let w: CGFloat = size
+        let h: CGFloat = size
+        
+        let x: CGFloat = self.frame.width - w * 2.5
+        let y: CGFloat = self.frame.height - h * 2.5
+        
+        let markLayer = CAShapeLayer.init()
+        let markFrame = CGRect(x: x, y: y, width: w, height: h)
+        markLayer.frame = markFrame
+        
+        markLayer.strokeColor = color
+        markLayer.fillColor = color
+        markLayer.lineWidth = 0.5
+        
+        markLayer.path = UIBezierPath.init(ovalIn: CGRect.init(x: 0,
+                                                               y: 0,
+                                                               width: markFrame.size.width,
+                                                               height: markFrame.size.height)).cgPath
+
+        self.layer.addSublayer(markLayer)
+    }
+    
+    func setColorOfMark() {
+        color = isLongPressEnabled ? UIColor.darkGray.cgColor : UIColor.lightGray.cgColor
+        self.setNeedsDisplay()
+    }
+    
+}
+
+ */
